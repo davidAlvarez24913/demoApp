@@ -1,12 +1,13 @@
+import React  from 'react'
 import {
   IonContent,
   IonHeader,
   IonPage,
   IonTitle,
   IonToolbar,
-} from "@ionic/react";
-import Map from "../components/Map";
-import "./Tab2.css";
+} from '@ionic/react'
+import Map from '../components/Map'
+import './Tab2.css'
 
 const Tab2: React.FC = () => {
   return (
@@ -17,12 +18,11 @@ const Tab2: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <Map />
-        </IonHeader>
+        <IonHeader collapse="condense"></IonHeader>
+        <Map />
       </IonContent>
     </IonPage>
-  );
-};
+  )
+}
 
-export default Tab2;
+export default Tab2

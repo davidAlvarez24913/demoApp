@@ -1,6 +1,5 @@
 import {
   IonButton,
-  IonCheckbox,
   IonContent,
   IonHeader,
   IonInput,
@@ -9,9 +8,8 @@ import {
   IonPage,
   IonTitle,
   IonToolbar,
-} from "@ionic/react";
-import ExploreContainer from "../components/ExploreContainer";
-import "./Tab1.css";
+} from '@ionic/react'
+import './Tab1.css'
 
 const Tab1: React.FC = () => {
   return (
@@ -29,24 +27,21 @@ const Tab1: React.FC = () => {
         </IonHeader>
         <form className="ion-padding">
           <IonItem>
-            <IonLabel position="floating">Username</IonLabel>
+            <IonLabel position="floating">Problema</IonLabel>
             <IonInput />
           </IonItem>
           <IonItem>
-            <IonLabel position="floating">Password</IonLabel>
-            <IonInput type="password" />
+            <IonLabel position="floating">Descripcion</IonLabel>
+            <IonInput type="text" />
           </IonItem>
-          <IonItem lines="none">
-            <IonLabel>Remember me</IonLabel>
-            <IonCheckbox defaultChecked={true} slot="start" />
-          </IonItem>
+
           <IonButton className="ion-margin-top" type="submit" expand="block">
-            Login
+            Enviar Formulario
           </IonButton>
         </form>
       </IonContent>
     </IonPage>
-  );
-};
+  )
+}
 
-export default Tab1;
+export default Tab1
