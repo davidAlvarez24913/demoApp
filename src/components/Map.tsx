@@ -1,26 +1,45 @@
 import mapboxgl from "mapbox-gl";
-
+import { Geolocation } from "@capacitor/geolocation";
 import "mapbox-gl/dist/mapbox-gl.css";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { IonLoading } from "@ionic/react";
 const Map = () => {
   const mapContainer = useRef(null);
   const map = useRef<mapboxgl.Map | null>(null);
-
+  const [coords] = useState(async () => {
+    const coordinates = await Geolocation.getCurrentPosition();
+    return coordinates.coords;
+  });
+  const [locationPermission, setLocationPermission] = useState<boolean>(false);
   mapboxgl.accessToken =
     "pk.eyJ1IjoiZGF2aWRhYWMiLCJhIjoiY2xjdHkyb2JxMDNnMDN2czVkdzJkbGpqayJ9.h9kw0S8xqW20zE1z72z-Pw";
 
   useEffect(() => {
-    if (map.current) return; // initialize map only once
+    const getLocationPermission = async () => {
+      const result = await Geolocation.requestPermissions();
+      setLocationPermission(result.location === "granted");
+    };
 
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current!,
-      style: "mapbox://styles/mapbox/streets-v11",
-      center: [-79.19941948695276, -3.9873904285577377],
-      zoom: 14,
-    });
+    getLocationPermission();
+    if (map.current) return; // initialize map only once
+    if (locationPermission) {
+      coords
+        .then((data) => {
+          map.current = new mapboxgl.Map({
+            container: mapContainer.current!,
+            style: "mapbox://styles/mapbox/streets-v11",
+            center: [data.longitude, data.latitude],
+            zoom: 14,
+          });
+        })
+        .catch((e) => {
+          return e;
+        });
+    }
   });
   return (
     <>
+      <IonLoading isOpen={false} />
       <div className="div-container" style={mapContainerStyle()}>
         <div
           ref={mapContainer}

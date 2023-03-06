@@ -1,0 +1,35 @@
+Progress: resolved 0, reused 1, downloaded 0, added 0
+Progress: resolved 56, reused 54, downloaded 0, added 0
+Progress: resolved 187, reused 155, downloaded 1, added 0
+Progress: resolved 291, reused 288, downloaded 1, added 0
+Progress: resolved 518, reused 514, downloaded 1, added 0
+ WARN  deprecated svgo@1.3.2: This SVGO version is no longer supported. Upgrade to v2.x.x.
+Progress: resolved 665, reused 661, downloaded 1, added 0
+ WARN  deprecated rollup-plugin-terser@7.0.2: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-terser
+Progress: resolved 894, reused 892, downloaded 1, added 0
+ WARN  deprecated stable@0.1.8: Modern JS already guarantees Array#sort() is a stable sort, so this library is deprecated. See the compatibility table on MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#browser_compatibility
+Progress: resolved 1143, reused 1140, downloaded 1, added 0
+ WARN  deprecated sourcemap-codec@1.4.8: Please use @jridgewell/sourcemap-codec instead
+ WARN  deprecated w3c-hr-time@1.0.2: Use your platform's native performance.now() and performance.timeOrigin.
+Progress: resolved 1302, reused 1300, downloaded 1, added 0
+Packages: +8 -4
+++++++++----
+Progress: resolved 1302, reused 1300, downloaded 1, added 8, done
+
+dependencies:
++ @babel/plugin-syntax-flow 7.18.6
++ @babel/plugin-transform-react-jsx 7.21.0
++ @testing-library/dom 9.0.0
+
+ WARN  Issues with peer dependencies found
+.
+├─┬ @babel/plugin-syntax-flow 7.18.6
+│ └── ✕ missing peer @babel/core@^7.0.0-0
+└─┬ @babel/plugin-transform-react-jsx 7.21.0
+  ├── ✕ missing peer @babel/core@^7.0.0-0
+  └─┬ @babel/plugin-syntax-jsx 7.18.6
+    └── ✕ missing peer @babel/core@^7.0.0-0
+Peer dependencies that should be installed:
+  @babel/core@">=7.0.0-0 <8.0.0"
+
+Done in 12.4s
