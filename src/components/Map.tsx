@@ -46,8 +46,7 @@ const Map = () => {
           className="map-container"
           id="map"
           style={{
-            width: "100%",
-            height: "100%",
+            display: "flex-1",
             position: "absolute",
             borderRadius: "5px",
             overflow: "hidden",
@@ -69,8 +68,8 @@ const mapContainerStyle = () =>
       "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
     textAlign: "center",
     margin: "2rem",
-    width: "100%",
-    height: "100%",
+    width: "100vw",
+    height: "100vh",
     position: "relative",
     borderRadius: "8px",
   } as const);

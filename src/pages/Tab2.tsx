@@ -18,11 +18,8 @@ const Tab2: React.FC = () => {
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Map</IonTitle>
-          </IonToolbar>
+          <Map />
         </IonHeader>
-        <Map />
       </IonContent>
     </IonPage>
   );
